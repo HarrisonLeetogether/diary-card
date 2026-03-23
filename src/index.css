@@ -1,0 +1,155 @@
+@import 'tailwindcss';
+
+@layer base {
+  :root {
+    color-scheme: light;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    color: #374151;
+    background-color: #f7f8fc;
+    background-image: linear-gradient(165deg, #f7f8fc 0%, #f9f5f1 42%, #f7f8fc 100%);
+    background-attachment: fixed;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  input[type='text'],
+  input[type='number'],
+  input[type='search'],
+  input[type='email'],
+  textarea {
+    font-family: inherit;
+  }
+
+  input[type='checkbox'] {
+    appearance: none;
+  }
+
+  select {
+    appearance: none;
+  }
+
+  button {
+    font-family: inherit;
+  }
+}
+
+/* 手账风输入（无 @apply，避免 v4 兼容问题） */
+.journal-input {
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid #ebe4dc;
+  background: rgba(255, 250, 247, 0.9);
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #374151;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.journal-input::placeholder {
+  color: rgba(156, 163, 175, 0.85);
+}
+
+.journal-input:focus {
+  outline: none;
+  border-color: rgba(141, 166, 217, 0.55);
+  box-shadow:
+    inset 0 1px 2px rgba(0, 0, 0, 0.04),
+    0 0 0 3px rgba(141, 166, 217, 0.12);
+}
+
+.journal-range {
+  height: 0.5rem;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 9999px;
+  background: #f9f5f1;
+  appearance: none;
+}
+
+.journal-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 9999px;
+  background: #e88c8c;
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 8px rgba(232, 140, 140, 0.35);
+  cursor: pointer;
+  margin-top: -4px;
+}
+
+.journal-range::-webkit-slider-runnable-track {
+  height: 0.5rem;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #f9f5f1, #ebe4dc);
+}
+
+.journal-range::-moz-range-thumb {
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 9999px;
+  background: #e88c8c;
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 8px rgba(232, 140, 140, 0.35);
+  cursor: pointer;
+}
+
+.journal-range::-moz-range-track {
+  height: 0.5rem;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #f9f5f1, #ebe4dc);
+}
+
+.journal-color {
+  margin-top: 0.5rem;
+  height: 3rem;
+  width: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid #ebe4dc;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04);
+  padding: 0;
+}
+
+.journal-color::-webkit-color-swatch-wrapper {
+  padding: 4px;
+}
+
+.journal-color::-webkit-color-swatch {
+  border: none;
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f9f5f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d9cfc4;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
