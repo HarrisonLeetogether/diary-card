@@ -17,7 +17,7 @@ function readStoredLocale(): Locale {
   } catch {
     /* ignore */
   }
-  return 'zh';
+  return 'en';
 }
 
 export function I18nProvider({ children }: { children: React.ReactNode }) {
