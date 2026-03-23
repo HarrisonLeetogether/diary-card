@@ -15,7 +15,7 @@ import { feelings } from '../data/feelings';
 
 function sanitizeFileBase(name: string): string {
   const s = name.replace(/[<>:"/\\|?*\u0000-\u001f]/g, '_').trim();
-  return s || '日记卡';
+  return s || '待办清单';
 }
 
 function hexToDocxFill(hex: string): string {
